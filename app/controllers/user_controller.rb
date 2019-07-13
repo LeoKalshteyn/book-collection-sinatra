@@ -1,0 +1,55 @@
+class UserController < ApplicationController
+
+    get '/signup' do
+        if Helpers.is_logged_in?(session)
+            redirect to '/books'
+        end
+      erb :'/users/new'
+    end
+
+    post '/signup' do
+        if Helpers.is_logged_in?(session)
+            redirect to '/books'
+        elsif params[:username] == "" || params[:password] == ""
+            redirect to '/signup'
+        else
+          @user = User.create(:username => params[:username], :password => params[:password], :email => params[:email])
+          session[:user_id] = @user.id
+          redirect '/menu'
+        end
+    end
+
+    get '/login' do
+        if Helpers.is_logged_in?(session)
+            redirect to '/menu'
+        end
+      erb :'/users/login'
+    end
+
+    post '/login' do
+        @user = User.find_by(:username => params[:username])
+        if @user && @user.authenticate(params[:password])
+          session["user_id"] = @user.id
+
+          redirect to "/menu"
+
+        else
+          redirect to "/login"
+        end
+      end
+
+    post '/logout' do
+      if Helpers.is_logged_in?(session)
+        session.clear
+      else
+        redirect to '/'
+      end
+      redirect to '/login'
+    end
+
+    get '/menu' do
+        @user = Helpers.current_user(session)
+        @books = Book.all
+        erb :'users/show'
+    end
+end
