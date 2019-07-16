@@ -1,0 +1,32 @@
+<div>
+<h1 class="details" ><%= @book.user.username %>'s Post</h1>
+
+    <div id="displayarea">
+        <h2 class="details"><%= @book.book_title %></h2>
+        <ul class="displaybook">
+          <li>Author: <%= @book.author_name %></p></li>
+        </ul>
+
+        <p class="details">Synopsis: <%= @book.book_desc %></p>
+
+        <ul class="displaybook">
+            <li><% if @book.user == Helpers.current_user(session) %>
+                <form action="/books/<%=@book.id %>/edit" method="get">
+                <input type="submit" value="Edit this book" class="buttons">
+                </form>
+
+                <% end %>
+            </li>
+            <li><% if @book.user == Helpers.current_user(session) %>
+                <form action="/books/<%= @book.id %>/delete" method="post">
+                <input id="hidden" type="hidden" name="_method" value="delete">
+                <input type="submit" value="Delete this book" class="buttons">
+                </form>
+
+                <% end %>
+            </li>
+        </ul>
+     </div>
+
+    <h3><a href="/menu" class="buttons">Back to Menu </a> </h3>
+</div>

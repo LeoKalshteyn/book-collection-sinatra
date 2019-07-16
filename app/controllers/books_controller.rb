@@ -18,12 +18,12 @@ class BookController < ApplicationController
         end
       end
 
-
-    post '/book' do
-      user = Helpers.current_user(session)
+      post '/book' do
+        user = Helpers.current_user(session)
       if user.nil?
         redirect to '/login'
-      elsif (params[:book][:book_title].empty? || params[:book][:author_title].empty?)
+      elsif (params[:book][:book_title].empty? || params[:book][:author_name].empty?)
+
         redirect to '/books/new'
       else
         @book = Book.create(params['book'])
@@ -44,18 +44,13 @@ class BookController < ApplicationController
       end
     end
 
-    get '/pools/:id/edit' do
-        if Helpers.is_logged_in?(session)
-          @book = Book.find(params[:id])
-          if @book.user.id != session["user_id"]
-            redirect to '/menu'
-          elsif @book.user == Helpers.current_user(session)
-            erb :'/books/edit'
-          else
-            redirect to '/login'
-          end
-        redirect to '/login'
-      end
+    get '/books/:id/edit' do
+      if Helpers.is_logged_in?(session)
+        @book = Book.find(params[:id])
+        erb :'/books/edit'
+        else
+          redirect to '/login'
+        end
     end
 
     patch '/books/:id' do

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Book Collection</title>
+    <link href="/stylesheets/bookstyle.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Helvetica&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container">
+
+    <header id="header"><h1><a href='/'>Book Collection</a></h1>
+        <h4>Place where you can keep track of your book collection</h4>
+        <div>
+        <%if Helpers.is_logged_in?(session) %>
+          <form method=post action='/logout'>
+          <input type='submit' value="Logout" class="buttons">
+          </form>
+        </div>
+        <% end %>
+    </header>
+
+     <%= yield %>
+</div>
+</body>
+</html>

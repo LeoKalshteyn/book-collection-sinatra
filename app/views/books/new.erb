@@ -1,0 +1,32 @@
+<div>
+
+<form action="/book" method="post">
+  <div>
+  <ul class="addbook"><h2>Add a New book to your list</h2>
+    <li>
+      <label for="book_title">Book Title: </label>
+      <input type="text" name="book[book_title]" id="book_title">
+    </li>
+    <li>
+      <label for="author_name">Name of the Author: </label>
+      <input type="text" name="book[author_name]" id="author_name">
+    </li>
+  </ul>
+  </div>
+
+    <div class="addbook">
+      <p class="indent">Book Synopsis:</p>
+      <textarea class="indent" type="text" name="book[book_desc]" id="book_desc" rows="10" cols="80" maxlength="500" placeholder="Enter a synopsis, limit to 500 characters"></textarea>
+    </div>
+
+    <div>
+    <ul class="addbook">
+      <li>
+        <input type="submit" value="Post Your book" class="buttons">
+      </li>
+    </ul>
+    </div>
+
+</form>
+<h3><a href="/menu" class="buttons">Back to Menu </a> </h3>
+</div>
