@@ -7,7 +7,7 @@
           <li>Author: <%= @book.author_name %></p></li>
         </ul>
 
-        <p class="details">Synopsis: <%= @book.book_desc %></p>
+        <p class="details"><%= @book.book_desc %></p>
 
         <ul class="displaybook">
             <li><% if @book.user == Helpers.current_user(session) %>

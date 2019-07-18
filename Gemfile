@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'apartment', '~> 2.2', '>= 2.2.1'
+gem 'rack-flash3'
 
 group :test do
   gem 'rspec'

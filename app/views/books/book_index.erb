@@ -1,4 +1,4 @@
-<h1>All Books</h1>
+<h1 class="index">All Books</h1>
 <% @books.each do |book| %>
     <h3> <a href="books/<%= book.id %>"> <%= book.book_title %> by <%= book.author_name %></a></h3>
 <% end %>
