@@ -45,7 +45,7 @@ div.sign {
 
 }
 
-/* inline log in and sign up buttons  */
+/* log in and sign up buttons  */
 ul.inline {
 list-style-type: none;
   margin-left: 50%;
@@ -116,7 +116,7 @@ ul.inline li a:hover {
     color: white;
   }
 
-  /* additional adjustments for login and signup pages */
+  /* additional edits for login and signup pages */
   .create {
       margin-left: 15%;
       font-size: 30px;
@@ -145,7 +145,7 @@ ul.inline li a:hover {
 
     }
 
-    /* style the book listings */
+    /* style book listings */
     .booklisting {
         text-decoration: none;
         color: rgb(207, 191, 161);
@@ -192,7 +192,7 @@ ul.inline li a:hover {
 
 }
 
-/* style how the book details will display */
+/* style for the book details display */
 .displaybook {
     list-style-type: none;
     width: 100%;
@@ -239,7 +239,7 @@ h4.details {
     margin-left: 35%;
 }
 
-/* style an area the book details are within */
+/* style an area for book details */
 #displayarea {
     margin: auto;
     width: 100%;

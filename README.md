@@ -1,6 +1,6 @@
 # BookCollection
 
-A Sinatra App to keep track of books and their authors.
+A Sinatra App to keep track of books, their authors and which users posted them.
 
 ## Installation
 
