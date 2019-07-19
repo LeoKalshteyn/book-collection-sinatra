@@ -55,31 +55,25 @@ class BookController < ApplicationController
 
     patch '/books/:id' do
       @book = Book.find(params[:id])
-
       if params[:book][:book_title].empty?
         redirect to "/books/#{@book.id}/edit"
       end
-
       @book.update(params[:book])
       @book.save
       redirect to "/books/#{@book.id}"
     end
 
     delete '/books/:id/delete' do
-      if Helpers.is_logged_in?(session)
-        @book = Book.find(params[:id])
-        if @book.user == Helpers.current_user(session)
-          @book = Book.find_by_id(params[:id])
-          @book.delete
-          redirect to '/menu'
-        else
-          redirect to '/menu'
-        end
-
-      else
+      if !Helpers.is_logged_in?(session)
         redirect to '/login'
+      elsif @book = Book.find(params[:id])
+        if @book.user == Helpers.current_user(session)
+          @book.delete
+        end
+        redirect to '/menu'
       end
     end
+
 
     get '/view_all' do
       if Helpers.is_logged_in?(session)
