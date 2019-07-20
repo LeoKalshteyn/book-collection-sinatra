@@ -68,7 +68,6 @@ class BookController < ApplicationController
 
     delete '/books/:id/delete' do
       if !Helpers.is_logged_in?(session)
-        flash[:error] = "Must be logged in as user which posted the book to delete it."
         redirect to '/login'
       elsif @book = Book.find(params[:id])
         if @book.user == Helpers.current_user(session)
