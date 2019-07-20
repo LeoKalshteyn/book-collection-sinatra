@@ -11,6 +11,7 @@ class UserController < ApplicationController
         if Helpers.is_logged_in?(session)
             redirect to '/books'
         elsif params[:username] == "" || params[:password] == ""
+            flash[:error] = "Username and password fields must be filled."
             redirect to '/signup'
         else
           @user = User.create(:username => params[:username], :password => params[:password], :email => params[:email])
@@ -34,6 +35,7 @@ class UserController < ApplicationController
           redirect to "/menu"
 
         else
+          flash[:error] = "Invalid username or password. Please Re-login"
           redirect to "/login"
         end
       end

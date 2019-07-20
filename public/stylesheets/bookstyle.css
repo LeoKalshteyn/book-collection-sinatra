@@ -34,6 +34,10 @@ body {
     margin-left: 30px;
 }
 
+.error {
+    color: red;
+}
+
 h1.index {
   color: rgb(207, 191, 161);
 }
@@ -92,7 +96,7 @@ ul.inline li a:hover {
 }
 
 .login label {
-    color: rgb(43, 67, 86);
+    color: rgb(77, 13, 0);
     font-size: 30px;
     margin-left: 10px;
 
@@ -104,7 +108,7 @@ ul.inline li a:hover {
     border-radius: 10px;
     text-decoration: none;
     border: none;
-    background-color: rgb(43, 67, 86);
+    background-color: rgb(77, 13, 0);
     color: rgb(255, 244, 213);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -120,12 +124,12 @@ ul.inline li a:hover {
   .create {
       margin-left: 15%;
       font-size: 30px;
-      color: rgb(43, 67, 86);
+      color: rgb(77, 13, 0);
   }
 
   .signinup {
       margin-left: 40%;
-      color: rgb(43, 67, 86);
+      color: rgb(77, 13, 0);
   }
 
   /* Adjustments to users/show.erb */

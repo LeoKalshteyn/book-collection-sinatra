@@ -1,5 +1,8 @@
-<div>
+<% if flash.has?(:error) %>
+<%= flash[:error] %>
+<% end %>
 
+<div>
 <form action="/book" method="post">
   <div>
   <ul class="addbook"><h2>Add a New book to your list</h2>

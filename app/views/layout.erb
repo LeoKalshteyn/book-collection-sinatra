@@ -8,18 +8,24 @@
   <body>
   <div class="container">
 
-    <header id="header"><h1><a href='/'>Book Collection</a></h1>
-        <h4>Place where you can keep track of your book collection</h4>
-        <div>
-        <%if Helpers.is_logged_in?(session) %>
-          <form method=post action='/logout'>
-          <input type='submit' value="Logout" class="buttons">
-          </form>
-        </div>
-        <% end %>
-    </header>
+  <header id="header"><h1><a href='/'>Book Collection</a></h1>
+      <h4>Place where you can keep track of your book collection</h4>
+      <div>
+      <%if Helpers.is_logged_in?(session) %>
+        <form method=post action='/logout'>
+        <input type='submit' value="Logout" class="buttons">
+        </form>
+      </div>
+      <% end %>
+  </header>
 
-     <%= yield %>
+  <div class="container">
+    <% if flash[:error] %>
+    <b><i><p class="error"><%= flash[:error] %></p></i></b>
+    <% end %>
+  </end>
+
+   <%= yield %>
 </div>
 </body>
 </html>
