@@ -1,16 +1,15 @@
 * {
     font-family: 'Helvetica', sans-serif;
 }
+
 body {
     background-image: url("/images/croppedbookbackground.jpg");
-
+    background-repeat: repeat;
 }
 
 #header {
     background-image: linear-gradient(to bottom right, rgb(77, 13, 0), rgb(77, 13, 0));
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 1px;
 }
 
 #header h1, h4 {
@@ -30,30 +29,37 @@ body {
     border-radius: 4px;
 }
 
-#header div {
-    margin-left: 30px;
+ div.logout {
+    margin-left: 600px;
+    margin-top: 1px;
+
 }
 
 .error {
     color: red;
 }
 
+/* "All Books" in view_all */
 h1.index {
-  color: rgb(207, 191, 161);
+  color: rgb(255,255,255);
 }
 
-div.sign {
-    background-color: rgba(255, 244, 213, 0.603);
-    padding-top: 15px;
-    padding-bottom: 15px;
+/*  in view_all ///////////////////////////////////////////////////// */
+h3.books {
+  color: rgb(255,255,255);
+}
 
+div.menu {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: rgb(255, 244, 213);
+    font-size: 30px;
 }
 
 /* log in and sign up buttons  */
 ul.inline {
 list-style-type: none;
-  margin-left: 50%;
-  width: 100%;
+  margin-left: 5%;
   padding: 0;
   overflow: hidden;
 }
@@ -65,12 +71,12 @@ ul.inline li {
 }
 
 ul.inline li a {
-  display: block;
+  display: inline;
   padding: 8px;
   background-color: rgb(77, 13, 0);
   text-decoration: none;
   color: rgb(207, 191, 161);
-  padding: 60px;
+  padding: 20px;
 }
 
 ul.inline li a:hover {
@@ -96,7 +102,7 @@ ul.inline li a:hover {
 }
 
 .login label {
-    color: rgb(77, 13, 0);
+    color: rgb(207, 191, 161);
     font-size: 30px;
     margin-left: 10px;
 
@@ -104,7 +110,7 @@ ul.inline li a:hover {
 
 .buttons {
     padding: 10px 24px;
-    font-size: 15px;
+    font-size: 24px;
     border-radius: 10px;
     text-decoration: none;
     border: none;
@@ -124,35 +130,40 @@ ul.inline li a:hover {
   .create {
       margin-left: 15%;
       font-size: 30px;
-      color: rgb(77, 13, 0);
+      color: rgb(207, 191, 161);
   }
 
   .signinup {
       margin-left: 40%;
-      color: rgb(77, 13, 0);
+      color: rgb(207, 191, 161);
   }
 
   /* Adjustments to users/show.erb */
-  ul.menu {
+
+  ul.userbooks {
     list-style-type: none;
-      margin-left: 40%;
+      margin-left: 1%;
       width: 100%;
-      padding: 30px;
+      padding: 10px;
       overflow: hidden;
     }
 
-    ul.menu li {
+    ul.userbooks li {
         float: left;
         font-size: 50px;
-        padding-left: 15px;
-        color: rgb(77, 13, 0);
+        padding-left: 5px;
+        color: rgb(207, 191, 161);
+    }
 
+    ul.menuadd li {
+        padding-left: 5px;
+        margin-bottom: 10px;
     }
 
     /* style book listings */
     .booklisting {
         text-decoration: none;
-        color: rgb(207, 191, 161);
+        color: rgb(255,255,255);
         margin-left: 2%;
         margin-right: 10%;
         padding-top: 2px;
@@ -161,7 +172,7 @@ ul.inline li a:hover {
 
     .booklisting a {
         text-decoration: none;
-        color: rgb(207, 191, 161);
+        color: rgb(255,255,255);
 
     }
 
@@ -178,7 +189,7 @@ ul.inline li a:hover {
     padding: 0;
     overflow: hidden;
     font-size: 20px;
-    color: rgb(207, 191, 161);
+    color: rgb(255,255,255);
     margin-left: 50px;
 }
 
@@ -203,7 +214,7 @@ ul.inline li a:hover {
     padding: 0;
     overflow: hidden;
     font-size: 20px;
-    color: rgb(207, 191, 161);
+    color: rgb(255,255,255);
     margin-left: 50px;
 
 }
@@ -215,30 +226,23 @@ ul.inline li a:hover {
 }
 
 .details {
-
-    color: rgb(77, 13, 0);
+    margin-left: 30px;
+    color: rgb(255, 244, 213);
 
 }
 
 p.details {
     font-size: 20px;
     margin-left: 60px;
-    color: rgb(207, 191, 161);
+    color: rgb(255,255,255);
 }
 
 h2.details {
     font-size: 40px;
     margin-left: 35%;
-    color: rgb(207, 191, 161);
+    color: rgb(255,255,255);
 }
 
-h1.details {
-    padding-left: 100px;
-    background-color: rgba(255, 244, 213, 0.603);
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-}
 h4.details {
     margin-left: 35%;
 }

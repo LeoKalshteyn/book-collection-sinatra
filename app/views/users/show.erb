@@ -1,6 +1,16 @@
-<div class="sign">
-    <ul class="menu">
+<div class="menu">
+    <div class="logout">
+    <%if Helpers.is_logged_in?(session) %>
+      <form method=post action='/logout'>
+      <input type='submit' value="Logout" class="buttons">
+      </form>
+      <% end %>
+    </div>
+
+    <ul class="userbooks">
         <li><%= Helpers.current_user(session).username %>'s Books</li>
+    </ul>
+    <ul class="menuadd">
         <li><a href="/books/new" class="buttons">Add a Book</a></li>
     </ul>
 

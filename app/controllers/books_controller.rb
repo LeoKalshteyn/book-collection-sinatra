@@ -5,7 +5,7 @@ class BookController < ApplicationController
         @books = Book.all
         erb :'/books/books'
       else
-        flash[:error] = "Must be logged in."
+        flash[:error] = "Must be logged in"
         redirect to '/users/login'
       end
     end
@@ -13,7 +13,7 @@ class BookController < ApplicationController
     get '/books/new' do
         user = Helpers.current_user(session)
         if user.nil?
-          flash[:error] = "Must be logged in to add books."
+          flash[:error] = "Must be logged in to add books"
           redirect to '/login'
         else
           erb :'books/new'
@@ -24,8 +24,8 @@ class BookController < ApplicationController
         user = Helpers.current_user(session)
       if user.nil?
         redirect to '/login'
-      elsif (params[:book][:book_title].empty? || params[:book][:author_name].empty?)
-        flash[:error] = "Book title and author fields must be filled."
+      elsif (params[:book][:book_title].empty?)
+        flash[:error] = "Book title field must be filled"
         redirect to '/books/new'
       else
         @book = Book.create(params['book'])
@@ -51,7 +51,7 @@ class BookController < ApplicationController
         @book = Book.find(params[:id])
         erb :'/books/edit'
         else
-          flash[:error] = "Must be logged in to edit books."
+          flash[:error] = "Must be logged in to edit books"
           redirect to '/login'
         end
     end
@@ -83,7 +83,7 @@ class BookController < ApplicationController
         @books = Book.all
         erb :'books/book_index'
       else
-        flash[:error] = "Must be logged in to view all books."
+        flash[:error] = "Must be logged in to view all books"
         redirect to '/login'
       end
     end
