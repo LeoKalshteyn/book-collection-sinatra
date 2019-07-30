@@ -7,32 +7,19 @@ body {
     background-repeat: repeat;
 }
 
-#header {
+.header {
     background-image: linear-gradient(to bottom right, rgb(77, 13, 0), rgb(77, 13, 0));
     border-radius: 1px;
 }
 
-#header h1, h4 {
+.header h1, h3 {
     margin-left: 30px;
     color: rgb(207, 191, 161);
 }
 
-#header h1 a {
+.header h1 a {
     text-decoration: none;
     color: rgb(207, 191, 161);
-}
-
-#header h1 a:hover {
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 4px;
-}
-
- div.logout {
-    margin-left: 600px;
-    margin-top: 1px;
-
 }
 
 .error {
@@ -44,8 +31,10 @@ h1.index {
   color: rgb(255,255,255);
 }
 
-/*  in view_all ///////////////////////////////////////////////////// */
-h3.books {
+/*  book list in view all */
+
+ul.viewallbooks {
+  font-size: 24px;
   color: rgb(255,255,255);
 }
 
@@ -118,12 +107,10 @@ ul.inline li a:hover {
     color: rgb(255, 244, 213);
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-
 }
 
 .buttons:hover {
-    background-color: rgb(79, 144, 155);
-    color: white;
+    background-color: rgb(85, 0, 128);
   }
 
   /* additional edits for login and signup pages */
@@ -138,7 +125,12 @@ ul.inline li a:hover {
       color: rgb(207, 191, 161);
   }
 
-  /* Adjustments to users/show.erb */
+  /* Edits for menu buttons and text */
+
+  div.logout {
+     float: right;
+     margin-top: 1px;
+ }
 
   ul.userbooks {
     list-style-type: none;
@@ -155,10 +147,18 @@ ul.inline li a:hover {
         color: rgb(207, 191, 161);
     }
 
-    ul.menuadd li {
-        padding-left: 5px;
+    ul.menuadd {
+        float: left;
+        padding-left: 15px;
         margin-bottom: 10px;
     }
+
+    ul.menuviewall {
+        float: left;
+        padding-left: 50px;
+        margin-bottom: 50px;
+    }
+
 
     /* style book listings */
     .booklisting {
@@ -166,7 +166,7 @@ ul.inline li a:hover {
         color: rgb(255,255,255);
         margin-left: 2%;
         margin-right: 10%;
-        padding-top: 2px;
+        padding-top: 100px;
 
     }
 
