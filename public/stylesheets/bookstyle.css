@@ -3,115 +3,134 @@
 }
 
 body {
+    margin: 0 auto;
     background-image: url("/images/croppedbookbackground.jpg");
     background-repeat: repeat;
 }
 
-.header {
-    background-image: linear-gradient(to bottom right, rgb(77, 13, 0), rgb(77, 13, 0));
-    border-radius: 1px;
+.wrapper {
+   margin: 0 auto;
+   background-color: #D2C0A7;
+   padding: 40px;
+   margin: 40px;
+   color: #68613B;
+ }
+
+ .menu h1, h3 {
+      margin: 0 auto;
+      color: #68613B;
+   }
+
+.booklisting h3 {
+     color: #68613B;
+  }
+
+  .sign h3 {
+       color: #68613B;
+    }
+
+.booklisting a {
+    color: #747660;
+    text-decoration:underline;
 }
 
-.header h1, h3 {
-    margin-left: 30px;
-    color: rgb(207, 191, 161);
+.booklisting a:hover {
+    color: #2E3D34;
+    text-decoration: underline;
 }
 
-.header h1 a {
-    text-decoration: none;
-    color: rgb(207, 191, 161);
+ .header {
+   padding: 15px;
+   margin: 0 auto;
+   background-color: #68613B;
+   height: 60px;
+ }
+
+ .header .logout{
+   float:right;
+
+ }
+
+ .error {
+   color:red;
+ }
+
+ .header .title{
+   float:left;
+ }
+
+ .header h1, h3 {
+    margin: 0 auto;
+     margin-left: 30px;
+     color: #F8E8D5;
+ }
+
+ .header a {
+     color: #F8E8D5;
+ }
+
+ input {
+border-style: solid;
+color: #2e3d34;
+border-color: #68613b;
+background-color: #f8e8d5;
+border-width: 1px;
+border-radius: 7px;
+padding: 7px;
+font-size: 19px;
+text-shadow: 0px 0px 0px rgba(42,42,42,.75);
 }
 
-.error {
-    color: red;
+textarea {
+border-style: solid;
+color: #2e3d34;
+border-color: #68613b;
+background-color: #f8e8d5;
+border-width: 1px;
+border-radius: 7px;
+padding: 7px;
+font-size: 19px;
+text-shadow: 0px 0px 0px rgba(42,42,42,.75);
 }
 
-/* "All Books" in view_all */
-h1.index {
-  color: rgb(255,255,255);
-}
-
-/*  book list in view all */
-
-ul.viewallbooks {
-  font-size: 24px;
-  color: rgb(255,255,255);
-}
-
-div.menu {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    color: rgb(255, 244, 213);
-    font-size: 30px;
-}
-
-/* log in and sign up buttons  */
-ul.inline {
-list-style-type: none;
-  margin-left: 5%;
-  padding: 0;
-  overflow: hidden;
-}
-
-ul.inline li {
-    float: left;
-    font-size: 40px;
-    padding-left: 15px;
-}
-
-ul.inline li a {
-  display: inline;
-  padding: 8px;
-  background-color: rgb(77, 13, 0);
-  text-decoration: none;
-  color: rgb(207, 191, 161);
-  padding: 20px;
-}
-
-ul.inline li a:hover {
-    background-color: rgb(85, 0, 128);
-}
-
-
-/* login and forms styling */
-
-.login {
-    margin-left: 15%;
-
-}
-.login input[type=text], input[type=password] {
-    padding: 12px 20px;
-    border: 2px solid rgba(43, 67, 86, 0.5);
-    border-radius: 10px;
-
-}
-
-.login input[type=text]:focus, input[type=password]:focus {
-   background-color: rgb(239, 253, 251);
-}
-
-.login label {
-    color: rgb(207, 191, 161);
-    font-size: 30px;
-    margin-left: 10px;
-
-}
 
 .buttons {
-    padding: 10px 24px;
-    font-size: 24px;
-    border-radius: 10px;
-    text-decoration: none;
-    border: none;
-    background-color: rgb(77, 13, 0);
-    color: rgb(255, 244, 213);
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+	background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+	background-color:#7d5d3b;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:26px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
 }
-
 .buttons:hover {
-    background-color: rgb(85, 0, 128);
-  }
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
+	background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+	background-color:#634b30;
+}
+.buttons:active {
+	position:relative;
+	top:1px;
 
   /* additional edits for login and signup pages */
   .create {
@@ -119,139 +138,3 @@ ul.inline li a:hover {
       font-size: 30px;
       color: rgb(207, 191, 161);
   }
-
-  .signinup {
-      margin-left: 40%;
-      color: rgb(207, 191, 161);
-  }
-
-  /* Edits for menu buttons and text */
-
-  div.logout {
-     float: right;
-     margin-top: 1px;
- }
-
-  ul.userbooks {
-    list-style-type: none;
-      margin-left: 1%;
-      width: 100%;
-      padding: 10px;
-      overflow: hidden;
-    }
-
-    ul.userbooks li {
-        float: left;
-        font-size: 50px;
-        padding-left: 5px;
-        color: rgb(207, 191, 161);
-    }
-
-    ul.menuadd {
-        float: left;
-        padding-left: 15px;
-        margin-bottom: 10px;
-    }
-
-    ul.menuviewall {
-        float: left;
-        padding-left: 50px;
-        margin-bottom: 50px;
-    }
-
-
-    /* style book listings */
-    .booklisting {
-        text-decoration: none;
-        color: rgb(255,255,255);
-        margin-left: 2%;
-        margin-right: 10%;
-        padding-top: 100px;
-
-    }
-
-    .booklisting a {
-        text-decoration: none;
-        color: rgb(255,255,255);
-
-    }
-
-/* styling add new book page */
-.addbook input[type=text], textarea, input[type=number], input[type=checkbox]   {
-    padding: 12px 20px;
-    border: 2px solid rgba(43, 67, 86, 0.5);
-    border-radius: 10px;
-}
-
-.addbook {
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-    font-size: 20px;
-    color: rgb(255,255,255);
-    margin-left: 50px;
-}
-
-.addbook li {
-    float: left;
-    padding: 10px;
-}
-
-.addbook h2 {
-    margin-left: 40%;
-}
-
-.indent {
-    margin-left: 10%;
-
-}
-
-/* style for the book details display */
-.displaybook {
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-    font-size: 20px;
-    color: rgb(255,255,255);
-    margin-left: 50px;
-
-}
-
-.displaybook li {
-    float: left;
-    padding: 10px;
-
-}
-
-.details {
-    margin-left: 30px;
-    color: rgb(255, 244, 213);
-
-}
-
-p.details {
-    font-size: 20px;
-    margin-left: 60px;
-    color: rgb(255,255,255);
-}
-
-h2.details {
-    font-size: 40px;
-    margin-left: 35%;
-    color: rgb(255,255,255);
-}
-
-h4.details {
-    margin-left: 35%;
-}
-
-/* style an area for book details */
-#displayarea {
-    margin: auto;
-    width: 100%;
-    border: 1px solid rgba(207, 191, 161, 0.5);
-    border-radius: 8px;
-
-}

@@ -10,7 +10,10 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    if Helpers.is_logged_in?(session)
+      redirect to '/menu'
+    else
+      erb :index
+    end
   end
-
 end

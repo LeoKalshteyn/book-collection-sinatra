@@ -1,16 +1,13 @@
  <div>
   <form action="/books/<%= @book.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <ul class="addbook"><p>Edit <%= @book.book_title %></p>
-      <li>
+
       <label for="book_title">Book Title: </label>
       <input type="text" name="book[book_title]" id="book_title" value="<%= @book.book_title %>">
-    </li>
-    <li>
+
       <label for="author_name">Name of the Author: </label>
       <input type="text" name="book[author_name]" id="author_name" value="<%= @book.author_name%>">
-    </li>
-  </ul>
+
   </div>
 
     <div class="addbook">
@@ -19,13 +16,11 @@
     </div>
 
     <div>
-    <ul class="addbook">
-      <li>
+
         <input type="submit" value="Edit this book" class="buttons">
-      </li>
-    </ul>
+</br></br>
     </div>
     </form>
 
-<h3><a href="/menu" class="buttons">Back to Menu </a> </h3>
+<a href="/menu" class="buttons">Back to Menu </a>
 </div>

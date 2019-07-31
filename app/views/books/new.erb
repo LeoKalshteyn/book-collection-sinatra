@@ -1,35 +1,24 @@
-<% if flash.has?(:error) %>
-<%= flash[:error] %>
-<% end %>
-
 <div>
 <form action="/book" method="post">
   <div>
-  <ul class="addbook"><h2>Add A New Book</h2>
-    <li>
+  <h2>Add A New Book</h2>
       <label for="book_title">Book Title: </label>
       <input type="text" name="book[book_title]" id="book_title">
-    </li>
-    <li>
+
       <label for="author_name">Name of the Author: </label>
       <input type="text" name="book[author_name]" id="author_name">
-    </li>
-  </ul>
   </div>
 
     <div class="addbook">
-      <p class="indent">Book Synopsis:</p>
-      <textarea class="indent" type="text" name="book[book_desc]" id="book_desc" rows="10" cols="80" maxlength="2000" placeholder="Enter a synopsis"></textarea>
+      <p>Book Synopsis:</p>
+      <textarea type="text" name="book[book_desc]" id="book_desc" rows="10" cols="80" maxlength="2000" placeholder="Enter a synopsis"></textarea>
     </div>
 
     <div>
-    <ul class="addbook">
-      <li>
-        <input type="submit" value="Post your Book" class="buttons">
-      </li>
-    </ul>
-    </div>
 
+        <input type="submit" value="Post your Book" class="buttons">
+    </div>
+</br>
 </form>
-<h3><a href="/menu" class="buttons">Back to Menu </a> </h3>
+<a href="/menu" class="buttons">Back to Menu </a>
 </div>

@@ -1,21 +1,16 @@
-<% if flash.has?(:signup_error) %>
-  <%= flash[:signup_error] %>
-<% end %>
-
-<div class="sign">
-<h3 class="create">Create Account</h3>
+<div>
     <form action="/signup" method="post" class="login">
       <label for="username">Username: </label>
-      <input type="text" name="username" id="username" placeholder="Choose Username...">
-
+      <input type="text" name="username" id="username" placeholder="Username">
+</br>
       <label for="email">Email: </label>
-      <input type="text" name="email" id="email" placeholder="Email address...">
-
+      <input type="text" name="email" id="email" placeholder="Email">
+</br>
       <label for="password">Password: </label>
-      <input type="password" name="password" id="password" placeholder="Choose password...">
-
+      <input type="password" name="password" id="password" placeholder="Password">
+</br></br>
       <input type="submit" value="Sign Up" class="buttons">
+      <a href='/login' class="buttons">Log In</a>
     </form>
     <br>
-  <p class="signinup">Already have an account? <a href='/login' class="buttons">Go to Log In page...</a></p>
 </div>
