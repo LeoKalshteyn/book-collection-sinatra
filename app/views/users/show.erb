@@ -1,23 +1,30 @@
 <div class="menu">
 
-    <ul class="userbooks">
-        <h1><%= Helpers.current_user(session).username %>'s Books<h1>
-    </ul>
-    <ul class="menuadd">
+  <ul class="userbooks">
+    <h1><%= Helpers.current_user(session).username %>'s Books<h1></ul>
+      <ul class="menuadd">
         <a href="/books/new" class="buttons">Add a Book</a>
-    </ul>
+      </ul>
 
-    <ul class="menuviewall">
-      <a href="/view_all" class="buttons">View All Books </a>
-    </ul>
+      <ul class="menuviewall">
+        <a href="/view_all" class="buttons">View All Books
+        </a>
+      </ul>
 
-</div>
+    </div>
 
-<div class="booklisting">
+    <div class="booklisting">
 
-<h3>Top 5 Books:</h3>
-</br>
-      <% @books[0...5].each_with_index do |book, index| %>
-    <h3> <a href="books/<%= book.id %>"> <%= index+1 %> - <%= book.book_title %> by <%= book.author_name %></a></h3>
-<% end %>
-</div>
+      <h3>Top 5 Books:</h3>
+    </br>
+    <% @books[0...5].each_with_index do |book, index| %>
+      <h3>
+        <a href="books/<%= book.id %>">
+          <%= index+1 %>
+          -
+          <%= book.book_title %>
+          by
+          <%= book.author_name %></a>
+      </h3>
+    <% end %>
+  </div>

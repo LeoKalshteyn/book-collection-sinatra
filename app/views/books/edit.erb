@@ -1,26 +1,30 @@
- <div>
+<div>
   <form action="/books/<%= @book.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
 
-      <label for="book_title">Book Title: </label>
-      <input type="text" name="book[book_title]" id="book_title" value="<%= @book.book_title %>">
+    <label for="book_title">Book Title:
+    </label>
+    <input type="text" name="book[book_title]" id="book_title" value="<%= @book.book_title %>">
 
-      <label for="author_name">Name of the Author: </label>
-      <input type="text" name="book[author_name]" id="author_name" value="<%= @book.author_name%>">
+    <label for="author_name">Name of the Author:
+    </label>
+    <input type="text" name="book[author_name]" id="author_name" value="<%= @book.author_name%>">
 
   </div>
 
-    <div class="addbook">
-      <p class="indent">Book Synopsis:</p>
-      <textarea class="indent" type="text" name="book[book_desc]" id="book_desc" rows="10" cols="80" maxlength="2000"><%= @book.book_desc %></textarea>
-    </div>
+  <div class="addbook">
+    <p class="indent">Book Synopsis:</p>
+    <textarea class="indent" type="text" name="book[book_desc]" id="book_desc" rows="10" cols="80" maxlength="2000"><%= @book.book_desc %></textarea>
+  </div>
 
-    <div>
+  <div>
 
-        <input type="submit" value="Edit this book" class="buttons">
-</br></br>
-    </div>
-    </form>
+    <input type="submit" value="Edit this book" class="buttons">
+  </br>
+</br>
+</div>
+</form>
 
-<a href="/menu" class="buttons">Back to Menu </a>
+<a href="/menu" class="buttons">Back to Menu
+</a>
 </div>

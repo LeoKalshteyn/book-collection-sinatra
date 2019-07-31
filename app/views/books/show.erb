@@ -1,27 +1,31 @@
 <div>
-    <div id="displayarea">
-        <h2 class="details"><%= @book.book_title %></h2>
-          <p>Author: <%= @book.author_name %></p>
+  <div id="displayarea">
+    <h2 class="details"><%= @book.book_title %></h2>
+    <p>Author:
+      <%= @book.author_name %></p>
 
-
-        <p class="details"><%= @book.book_desc %></p>
-        <b>Posted by <%= @book.user.username %></b>
-      </br></br>
-            <% if @book.user == Helpers.current_user(session) %>
-                <form action="/books/<%=@book.id %>/edit" method="get">
-                <input type="submit" value="Edit this book" class="buttons">
-                </form>
-
-                <% end %></br>
-              <% if @book.user == Helpers.current_user(session) %>
-                <form action="/books/<%= @book.id %>/delete" method="post">
-                <input id="hidden" type="hidden" name="_method" value="delete">
-                <input type="submit" value="Delete this book" class="buttons">
-                </form>
-
-                <% end %>
-
-     </div>
+    <p class="details"><%= @book.book_desc %></p>
+    <b>Posted by
+      <%= @book.user.username %></b>
+  </br>
 </br>
-    <a href="/menu" class="buttons">Back to Menu </a>
+<% if @book.user == Helpers.current_user(session) %>
+  <form action="/books/<%=@book.id %>/edit" method="get">
+    <input type="submit" value="Edit this book" class="buttons">
+  </form>
+
+<% end %>
+</br>
+<% if @book.user == Helpers.current_user(session) %>
+<form action="/books/<%= @book.id %>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete this book" class="buttons">
+</form>
+
+<% end %>
+
+</div>
+</br>
+<a href="/menu" class="buttons">Back to Menu
+</a>
 </div>

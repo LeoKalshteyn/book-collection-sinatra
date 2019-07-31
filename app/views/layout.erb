@@ -7,24 +7,31 @@
   </head>
   <body>
 
-  <div class="header">
-    <div class="title"><h1><a href='/'>Book Collection</a></h1>
-      <h3>Library to store all your books</h3>
-    </div>
-    <div class"logout">
-      <%if Helpers.is_logged_in?(session) %>
-        <form method=post action='/logout'>
-        <input style="float:right" type='submit' value="Logout" class="buttons">
-        </form>
+    <div class="header">
+      <div class="title">
+        <h1>
+          <a href='/'>Book Collection</a>
+        </h1>
+        <h3>Library to store all your books</h3>
+      </div>
+      <div class"logout"="class"logout"">
+        <%if Helpers.is_logged_in?(session) %>
+          <form method="post" action='/logout'>
+            <input style="float:right" type='submit' value="Logout" class="buttons">
+          </form>
         <% end %>
       </div>
+    </div>
+    <div class="wrapper">
+      <% if flash[:error] %>
+        <b>
+          <i>
+            <p class="error"><%= flash[:error] %></p>
+          </i>
+        </b>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
-<div class="wrapper">
-  <% if flash[:error] %>
-  <b><i><p class="error"><%= flash[:error] %></p></i></b>
-  <% end %>
-   <%= yield %>
- </div>
-</div>
 </body>
 </html>

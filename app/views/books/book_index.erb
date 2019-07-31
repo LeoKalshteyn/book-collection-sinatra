@@ -1,9 +1,16 @@
 <div class="booklisting">
-<h1 class="index">All Books</h1>
-<% @books.each do |book| %>
-  <ul id="viewallbooks"><h3><a href="books/<%= book.id %>"> <%= book.book_title %> by <%= book.author_name %></a></h3>
-  </ul>
-<% end %>
+  <h1 class="index">All Books</h1>
+  <% @books.each do |book| %>
+    <ul id="viewallbooks">
+      <h3>
+        <a href="books/<%= book.id %>">
+          <%= book.book_title %>
+          by
+          <%= book.author_name %></a>
+      </h3>
+    </ul>
+  <% end %>
 </div>
 </br>
-<a href="/menu" class="buttons">Back to Menu </a>
+<a href="/menu" class="buttons">Back to Menu
+</a>
