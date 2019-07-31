@@ -1,5 +1,6 @@
-class Helpers
+# frozen_string_literal: true
 
+class Helpers
   def self.current_user(session)
     User.find(session[:user_id])
   end
@@ -7,5 +8,4 @@ class Helpers
   def self.is_logged_in?(session)
     session.include?(:user_id)
   end
-
 end

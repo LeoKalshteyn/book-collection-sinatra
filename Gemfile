@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 
-gem 'sinatra'
-gem 'activerecord', :require => 'active_record'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'activerecord', require: 'active_record'
+gem 'apartment', '~> 2.2', '>= 2.2.1'
+gem 'bcrypt'
+gem 'pry'
+gem 'rack-flash3'
 gem 'rake'
 gem 'require_all'
+gem 'shotgun'
+gem 'sinatra'
+gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'sqlite3'
 gem 'thin'
-gem 'shotgun'
-gem 'pry'
-gem 'bcrypt'
-gem "tux"
-gem 'apartment', '~> 2.2', '>= 2.2.1'
-gem 'rack-flash3'
+gem 'tux'
 
 group :test do
-  gem 'rspec'
   gem 'capybara'
-  gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+  gem 'rack-test'
+  gem 'rspec'
 end

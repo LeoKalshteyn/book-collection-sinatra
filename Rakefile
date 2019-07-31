@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './config/environment'
 
 require 'sinatra/activerecord/rake'
@@ -7,7 +9,5 @@ task :console do
   Pry.start
 end
 
-
-
-#require "bundler/gem_tasks"
-#task :default => :spec
+# require "bundler/gem_tasks"
+# task :default => :spec
