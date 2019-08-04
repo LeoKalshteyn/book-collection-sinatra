@@ -2,14 +2,11 @@
   <form action="/books/<%= @book.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="patch">
 
-    <label for="book_title">Book Title:
-    </label>
+    <label for="book_title">Book Title:</label>
     <input type="text" name="book[book_title]" id="book_title" value="<%= @book.book_title %>">
 
-    <label for="author_name">Name of the Author:
-    </label>
+    <label for="author_name">Name of the Author:</label>
     <input type="text" name="book[author_name]" id="author_name" value="<%= @book.author_name%>">
-
   </div>
 
   <div class="addbook">
@@ -18,13 +15,10 @@
   </div>
 
   <div>
-
     <input type="submit" value="Edit this book" class="buttons">
   </br>
-</br>
-</div>
+  </br>
+  </div>
 </form>
 
-<a href="/menu" class="buttons">Back to Menu
-</a>
-</div>
+<a href="/menu" class="buttons">Back to Menu</a>

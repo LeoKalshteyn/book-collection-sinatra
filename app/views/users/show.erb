@@ -7,8 +7,7 @@
       </ul>
 
       <ul class="menuviewall">
-        <a href="/view_all" class="buttons">View All Books
-        </a>
+        <a href="/view_all" class="buttons">View All Books</a>
       </ul>
 
     </div>
@@ -17,6 +16,7 @@
 
       <h3>Top 5 Books:</h3>
     </br>
+    <!-- displays top 5 books from view all page -->
     <% @books[0...5].each_with_index do |book, index| %>
       <h3>
         <a href="books/<%= book.id %>">

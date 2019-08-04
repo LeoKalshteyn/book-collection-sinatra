@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+#gives Rack environment requirements and starts application
 
 require './config/environment'
 

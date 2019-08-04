@@ -1,6 +1,8 @@
-# frozen_string_literal: true
-
 class BookController < ApplicationController
+
+#get method requests data from specific resource
+#post method sends data to server to update or creat resource
+
   get '/books' do
     if Helpers.is_logged_in?(session)
       @books = Book.all
