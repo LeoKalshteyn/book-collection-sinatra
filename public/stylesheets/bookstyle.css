@@ -142,10 +142,4 @@ text-shadow: 0px 0px 0px rgba(42,42,42,.75);
 .buttons:active {
 	position:relative;
 	top:1px;
-
-  /* additional edits for login and signup pages */
-  .create {
-      margin-left: 15%;
-      font-size: 30px;
-      color: rgb(207, 191, 161);
-  }
+}
