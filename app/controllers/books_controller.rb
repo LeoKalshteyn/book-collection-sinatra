@@ -1,7 +1,8 @@
 class BookController < ApplicationController
 
-#get method requests data from specific resource
+#get method requests data from specific resource to show
 #post method sends data to server to update or creat resource
+# erb renders
 
   get '/books' do
     if Helpers.is_logged_in?(session)
@@ -10,6 +11,7 @@ class BookController < ApplicationController
     else
       flash[:error] = 'Must be logged in'
       redirect to '/users/login'
+      binding.pry
     end
   end
 
@@ -50,23 +52,31 @@ class BookController < ApplicationController
   end
 
   get '/books/:id/edit' do
-    if Helpers.is_logged_in?(session)
-      @book = Book.find(params[:id])
-      erb :'/books/edit'
-    else
-      flash[:error] = 'Must be logged in to edit books'
-      redirect to '/login'
+      if Helpers.is_logged_in?(session)
+        @book = Book.find(params[:id])
+        #@book.user == Helpers.current_user(session)
+        erb :'/books/edit' unless @book.user == Helpers.current_user(session)
+        redirect '/menu'
+      else
+        flash[:error] = 'Must be logged in to edit books'
+        redirect to '/login'
       end
   end
 
+# modifies book id. Redirects to edit if params empty
   patch '/books/:id' do
-    @book = Book.find(params[:id])
-    redirect to "/books/#{@book.id}/edit" if params[:book][:book_title].empty?
-    @book.update(params[:book])
-    @book.save
-    redirect to "/books/#{@book.id}"
+      @book = Book.find(params[:id])
+    if @book.user == Helpers.current_user(session)
+      redirect to "/books/#{@book.id}/edit" if params[:book][:book_title].empty?
+      @book.update(params[:book])
+      @book.save
+      redirect to "/books/#{@book.id}"
+    else
+      redirect to '/menu'
+    end
   end
 
+# deletes book
   delete '/books/:id/delete' do
     if !Helpers.is_logged_in?(session)
       redirect to '/login'

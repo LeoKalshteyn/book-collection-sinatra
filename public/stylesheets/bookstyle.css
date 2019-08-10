@@ -39,6 +39,7 @@ body {
     text-decoration:underline;
 }
 
+/* highlights when hovered over */
 .booklisting a:hover {
     color: #2E3D34;
     text-decoration: underline;

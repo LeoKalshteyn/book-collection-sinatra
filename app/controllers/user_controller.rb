@@ -8,8 +8,11 @@ class UserController < ApplicationController
   post '/signup' do
     if Helpers.is_logged_in?(session)
       redirect to '/books'
-    elsif params[:username] == '' || params[:password] == ''
-      flash[:error] = 'Username and password fields must be filled'
+    elsif params[:username] == '' || params[:password] == '' || params[:email] == ''
+      flash[:error] = 'Username, email and password fields must be filled'
+      redirect to '/signup'
+    elsif User.find_by(username: params[:username])
+      flash[:error] = 'Username taken, please choose another'
       redirect to '/signup'
     else
       @user = User.create(username: params[:username], password: params[:password], email: params[:email])
@@ -25,7 +28,7 @@ class UserController < ApplicationController
 
   post '/login' do
     @user = User.find_by(username: params[:username])
-    if @user&.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session['user_id'] = @user.id
       redirect to '/menu'
     else
