@@ -6,9 +6,11 @@ development:
   timeout: 5000
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
-  database: mydb
-  host: localhost
-  pool: 5
-  timeout: 5000
+  encoding: unicode
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  port: <%= ENV['DB_PORT'] %>
+  database: <%= ENV['DB_NAME'] %>
+  pool: 25
