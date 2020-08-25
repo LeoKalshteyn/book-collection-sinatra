@@ -20,3 +20,11 @@ group :test do
   gem 'rack-test'
   gem 'rspec'
 end
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
