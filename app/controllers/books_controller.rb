@@ -1,7 +1,7 @@
 class BookController < ApplicationController
 
-#get method requests data from specific resource to show
-#post method sends data to server to update or creat resource
+# get method requests data from specific resource to show
+# post method sends data to server to update or create resource
 # erb renders
 
   get '/books' do
@@ -11,7 +11,6 @@ class BookController < ApplicationController
     else
       flash[:error] = 'Must be logged in'
       redirect to '/users/login'
-      binding.pry
     end
   end
 
@@ -52,16 +51,13 @@ class BookController < ApplicationController
   end
 
   get '/books/:id/edit' do
-      if Helpers.is_logged_in?(session)
+        redirect_if_not_logged_in
+        # find = Retrieve a book single record from database by id/key
         @book = Book.find(params[:id])
-        #@book.user == Helpers.current_user(session)
-        erb :'/books/edit' unless @book.user == Helpers.current_user(session)
-        redirect '/menu'
-      else
-        flash[:error] = 'Must be logged in to edit books'
-        redirect to '/login'
-      end
-  end
+        redirect '/menu' unless @book.user == Helpers.current_user(session)
+        erb :'/books/edit'
+    end
+
 
 # modifies book id. Redirects to edit if params empty
   patch '/books/:id' do
@@ -80,19 +76,25 @@ class BookController < ApplicationController
   delete '/books/:id/delete' do
     if !Helpers.is_logged_in?(session)
       redirect to '/login'
-    elsif @book = Book.find(params[:id])
+    elsif @book = Book.find_by(id: params[:id])
       @book.delete if @book.user == Helpers.current_user(session)
       redirect to '/menu'
     end
   end
 
   get '/view_all' do
-    if Helpers.is_logged_in?(session)
+      redirect_if_not_logged_in
       @books = Book.all
       erb :'books/book_index'
-    else
-      flash[:error] = 'Must be logged in to view all books'
-      redirect to '/login'
+    end
+
+  helpers do
+    def redirect_if_not_logged_in
+      if !Helpers.is_logged_in?(session)
+        flash[:error] = 'Must be logged in to view all books'
+        redirect to '/login'
+      end
     end
   end
+
 end
