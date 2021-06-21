@@ -18,13 +18,13 @@ Github User Authentication
 
 New users have the ability to register an account on the sign-in page or sign up.
 
-<img src="./login.gif" alt="Login Gif" width="500" height="600">
+<img src="./login.gif" alt="Login Gif" width="600" height="295">
 
 Adding and viewing Books
 
 A user can add books as well as view all of the books added to their library.
 
-<img src="./books.gif" alt="Books GIF" width="500" height="600">
+<img src="./books.gif" alt="Books GIF" width="600" height="295">
 
 # Installation:
 
